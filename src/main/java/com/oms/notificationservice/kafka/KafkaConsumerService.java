@@ -18,13 +18,12 @@ public class KafkaConsumerService {
     }
 
     @KafkaListener(topics = "order-events", groupId = "notification-group")
-    public void consume(String message) {
+    public void consume(OrderEvent orderEvent) {
         try {
-            OrderEvent event = objectMapper.readValue(message, OrderEvent.class);
             log.info("🔔 Notification received for Order: {}, Status: {}, Message: {}",
-                    event.getOrderId(), event.getStatus(), event.getMessage());
+                    orderEvent.getOrderId(), orderEvent.getStatus(), orderEvent.getMessage());
         } catch (Exception e) {
-            log.error("❌ Failed to deserialize message: {}", message, e);
+            log.error("❌ Failed to deserialize message: {}", orderEvent, e);
         }
     }
 }
