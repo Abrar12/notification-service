@@ -1,9 +1,11 @@
-package com.oms.notification_service;
+package com.oms.notificationservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.kafka.annotation.EnableKafka;
 
 @SpringBootApplication
+@EnableKafka
 public class NotificationServiceApplication {
 
 	public static void main(String[] args) {

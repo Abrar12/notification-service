@@ -1,4 +1,4 @@
-package com.oms.notification_service;
+package com.oms.notificationservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
